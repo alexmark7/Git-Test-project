@@ -1,0 +1,52 @@
+Command: jdb -classpath <original-classes> -sourcepath <original-source> com.tomgregory.OriginalProbe orientation
+Initializing jdb ...
+> 
+(jdb) stop at com.tomgregory.Board:64
+Deferring breakpoint com.tomgregory.Board:64.
+It will be set after the class is loaded.
+> 
+(jdb) run
+run com.tomgregory.OriginalProbe orientation
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint com.tomgregory.Board:64
+
+Breakpoint hit: "thread=main", com.tomgregory.Board.calculateEndPoint(), line=64 bci=0
+64            return switch (getRandomInteger(1)) {
+
+main[1] 
+(jdb) step
+> 
+Step completed: "thread=main", com.tomgregory.Board.getRandomInteger(), line=80 bci=0
+80            return new Random().nextInt(maxValue);
+
+main[1] 
+(jdb) locals
+Method arguments:
+maxValue = 1
+Local variables:
+main[1] 
+(jdb) print new java.util.Random().nextInt(maxValue)
+ new java.util.Random().nextInt(maxValue) = 0
+main[1] 
+(jdb) where
+  [1] com.tomgregory.Board.getRandomInteger (Board.java:80)
+  [2] com.tomgregory.Board.calculateEndPoint (Board.java:64)
+  [3] com.tomgregory.Board.addBattleship (Board.java:50)
+  [4] com.tomgregory.Board.<init> (Board.java:13)
+  [5] com.tomgregory.OriginalProbe.main (OriginalProbe.java:21)
+main[1] 
+(jdb) step up
+> 
+Step completed: "thread=main", com.tomgregory.Board.calculateEndPoint(), line=64 bci=4
+64            return switch (getRandomInteger(1)) {
+
+main[1] 
+(jdb) next
+> 
+Step completed: "thread=main", com.tomgregory.Board.calculateEndPoint(), line=65 bci=32
+65                case 0 -> getHorizontalEndPoint(startPoint);
+
+main[1] 
+(jdb) quit

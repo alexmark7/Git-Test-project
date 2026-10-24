@@ -1,0 +1,59 @@
+Command: jdb -classpath <original-classes> -sourcepath <original-source> com.tomgregory.OriginalProbe bounds
+Initializing jdb ...
+> 
+(jdb) stop at com.tomgregory.Board:50
+Deferring breakpoint com.tomgregory.Board:50.
+It will be set after the class is loaded.
+> 
+(jdb) catch all java.lang.ArrayIndexOutOfBoundsException
+Deferring all java.lang.ArrayIndexOutOfBoundsException.
+It will be set after the class is loaded.
+> 
+(jdb) run
+run com.tomgregory.OriginalProbe bounds
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint com.tomgregory.Board:50
+
+Breakpoint hit: "thread=main", com.tomgregory.Board.addBattleship(), line=50 bci=5
+50            Point endPoint = calculateEndPoint(startPoint);
+
+main[1] 
+(jdb) set startPoint.x = 8
+ startPoint.x = 8 = 8
+main[1] 
+(jdb) set startPoint.y = 0
+ startPoint.y = 0 = 0
+main[1] 
+(jdb) clear com.tomgregory.Board:50
+Removed: breakpoint com.tomgregory.Board:50
+main[1] 
+(jdb) cont
+> Set deferred all java.lang.ArrayIndexOutOfBoundsException
+
+Exception occurred: java.lang.ArrayIndexOutOfBoundsException (uncaught)
+Exception occurred: java.lang.ArrayIndexOutOfBoundsException (uncaught)"thread=main", com.tomgregory.Board.addBattleship(), line=54 bci=48
+54                    grid[x][y] = true;
+
+main[1] 
+(jdb) locals
+Method arguments:
+Local variables:
+startPoint = instance of java.awt.Point(id=424)
+endPoint = instance of java.awt.Point(id=428)
+x = 10
+y = 0
+main[1] 
+(jdb) print grid.length
+ grid.length = 10
+main[1] 
+(jdb) print endPoint.x
+ endPoint.x = 10
+main[1] 
+(jdb) where
+  [1] com.tomgregory.Board.addBattleship (Board.java:54)
+  [2] com.tomgregory.Board.<init> (Board.java:13)
+  [3] com.tomgregory.OriginalProbe.main (OriginalProbe.java:21)
+main[1] 
+(jdb) quit

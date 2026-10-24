@@ -1,0 +1,39 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+╷
+├─ JUnit Jupiter ✔
+│  ├─ BoardTest ✔
+│  │  ├─ placesVerticalShip() ✔
+│  │  ├─ fiveThousandSeededBoardsHaveOneStraightThreeCellShip() ✔
+│  │  ├─ placesHorizontalShip() ✔
+│  │  ├─ rejectsBoardsSmallerThanShip() ✔
+│  │  ├─ retriesHorizontalPlacementThatWouldLeaveBoard() ✔
+│  │  ├─ retriesVerticalPlacementThatWouldLeaveBoard() ✔
+│  │  ├─ placesHorizontalShipAtBottomRightEdge() ✔
+│  │  ├─ placesVerticalShipAtBottomRightEdge() ✔
+│  │  ├─ sunkBoardProducesShipSunkMessageWithoutAnotherTurn() ✔
+│  │  ├─ sinksAfterExactlyThreeDistinctHits() ✔
+│  │  └─ supportsSmallestValidBoard() ✔
+│  └─ PlayerTest ✔
+│     ├─ canAttackLastRowAndColumn() ✔
+│     ├─ attacksEveryCellExactlyOnceIncludingEdges() ✔
+│     ├─ retriesPreviouslyAttackedCoordinates() ✔
+│     └─ oneThousandSeededGamesRespectTurnLimitAndSinkAfterThreeHits() ✔
+├─ JUnit Vintage ✔
+└─ JUnit Platform Suite ✔
+
+Test run finished after 304 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        15 tests found           ]
+[         0 tests skipped         ]
+[        15 tests started         ]
+[         0 tests aborted         ]
+[        15 tests successful      ]
+[         0 tests failed          ]
+

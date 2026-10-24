@@ -1,0 +1,40 @@
+Command: jdb -classpath <original-classes> -sourcepath <original-source> com.tomgregory.OriginalProbe sinking
+Initializing jdb ...
+> 
+(jdb) stop at com.tomgregory.Board:25
+Deferring breakpoint com.tomgregory.Board:25.
+It will be set after the class is loaded.
+> 
+(jdb) run
+run com.tomgregory.OriginalProbe sinking
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+> 
+VM Started: Set deferred breakpoint com.tomgregory.Board:25
+
+Breakpoint hit: "thread=main", com.tomgregory.Board.isSunk(), line=25 bci=0
+25            return hitCount > BATTLESHIP_LENGTH;
+
+main[1] 
+(jdb) print hitCount
+ hitCount = 3
+main[1] 
+(jdb) print com.tomgregory.Board.BATTLESHIP_LENGTH
+ com.tomgregory.Board.BATTLESHIP_LENGTH = 3
+main[1] 
+(jdb) print hitCount > com.tomgregory.Board.BATTLESHIP_LENGTH
+ hitCount > com.tomgregory.Board.BATTLESHIP_LENGTH = false
+main[1] 
+(jdb) print hitCount >= com.tomgregory.Board.BATTLESHIP_LENGTH
+ hitCount >= com.tomgregory.Board.BATTLESHIP_LENGTH = true
+main[1] 
+(jdb) where
+  [1] com.tomgregory.Board.isSunk (Board.java:25)
+  [2] com.tomgregory.OriginalProbe.main (OriginalProbe.java:19)
+main[1] 
+(jdb) cont
+> After three distinct hits: isSunk=false
+
+The application exited
+
+(jdb) quit

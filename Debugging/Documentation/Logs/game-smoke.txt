@@ -1,0 +1,5 @@
+Ran 7 real games via java -jar build/libs/debug-demo-1.0-SNAPSHOT.jar
+All processes exited 0.
+Each game used at most 50 turns.
+Ship sunk! appeared exactly when there were three direct hits.
+Both sunk and survived outcomes observed; full examples saved separately.

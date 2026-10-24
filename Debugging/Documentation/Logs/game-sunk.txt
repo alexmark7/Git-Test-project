@@ -1,0 +1,36 @@
+Setting up game
+Commence bombardment!
+Turn 1: 2,9
+Turn 2: 3,5
+Turn 3: 6,4 direct hit!
+Turn 4: 1,2
+Turn 5: 5,6
+Turn 6: 6,2
+Turn 7: 9,7
+Turn 8: 7,4 direct hit!
+Turn 9: 8,8
+Turn 10: 5,2
+Turn 11: 8,7
+Turn 12: 6,3
+Turn 13: 4,4
+Turn 14: 8,5
+Turn 15: 3,7
+Turn 16: 8,0
+Turn 17: 7,5
+Turn 18: 7,2
+Turn 19: 7,9
+Turn 20: 4,6
+Turn 21: 8,4 direct hit!
+Ship sunk!
+Revealing battleship location
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o x x x o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+o o o o o o o o o o 
+
